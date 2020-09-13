@@ -9,10 +9,13 @@ def chk_env():
 
 
 if __name__ == "__main__":
-    chk_env()
+    # chk_env()
     env = gym.make("MountainCar-v0")
     observation = env.reset()
+    print(observation)
+    print(env.observation_space.high)
+    print(env.observation_space.low)
     env.render()
     for _ in range(2000):
         env.render()
-        env.step(env.action_space.sample())
+        print(env.step(env.action_space.sample()))
